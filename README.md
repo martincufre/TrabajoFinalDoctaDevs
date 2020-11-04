@@ -19,6 +19,8 @@ npm install
 ## Documentación de la API
 [https://documenter.getpostman.com/view/5967737/TVYF8ym3](https://documenter.getpostman.com/view/5967737/TVYF8ym3)
 
+## Comandos de consola
+
 ### Servidor de desarrollo
 ```
 npm run serve
