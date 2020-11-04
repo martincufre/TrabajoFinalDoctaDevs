@@ -16,6 +16,9 @@ npm install
 - Desarrollar el componente ListaPosts.vue, donde se pasará creará un v-for para renderizar todos los posts que se reciban en una variable data.
 - Continuara...
 
+## Documentación de la API
+[https://documenter.getpostman.com/view/5967737/TVYF8ym3](https://documenter.getpostman.com/view/5967737/TVYF8ym3)
+
 ### Servidor de desarrollo
 ```
 npm run serve
