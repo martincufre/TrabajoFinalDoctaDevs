@@ -1,24 +1,32 @@
-# trabajo-final
+# DoctaTwweets (Trabajo Final)
 
-## Project setup
+## Instalación
+Para comenzar debemos clonar el proyecto.
+```
+git clone https://github.com/whoisnegrello/docta-tweets-front-tf.git
+```
+
+y luego instalar las dependencias.
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Pasos a seguir
+- Desarrollar el componente Post.vue, donde se maquetará la vista de un post.
+- Desarrollar el componente ListaPosts.vue, donde se pasará creará un v-for para renderizar todos los posts que se reciban en una variable data.
+- Continuara...
+
+### Servidor de desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilación de proyecto
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Linteo y corrección automática
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
