@@ -13,21 +13,9 @@ export default {
         }
     },
     methods: {
-        likePost(){
-            fetch(`https://node-api-doctadevs.vercel.app/posts/{{POST_ID}}/like`,
-            {
-                method: 'POST'
-            })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }
-    },    
+       likePost(){
+       this.$emit('event-like')
+       }
+    },
 }
 </script>
