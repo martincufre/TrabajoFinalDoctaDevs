@@ -1,7 +1,7 @@
 <template>
     <div>
         <post v-for="(post, tweet) in posts" :key="tweet"
-        :autor="post.autor"
+        :autor="post.autor.username"
         :fecha='post.fecha'
         :mensaje='post.mensaje'
         :likes='post.likes.length'

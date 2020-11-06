@@ -1,11 +1,11 @@
 <template>
     <div>
         <div>
-            <h2>{{autor}}</h2>
-            <p>{{fecha}}</p>
-            <p>{{mensaje}}</p>   
-            <boton-like @event-like="likePost">{{likes}}</boton-like>
-            <boton-eliminar-post></boton-eliminar-post>
+            <h2>{{this.autor}}</h2>
+            <p>{{this.fecha}}</p>
+            <p>{{this.mensaje}}</p>   
+            <boton-like @event-like="likePost"></boton-like>
+            <boton-eliminar-post @event-eliminar="eliminarPost"></boton-eliminar-post>
         </div>
     </div>
 </template>
@@ -48,6 +48,25 @@ export default {
                 console.log(err)
             })
         }
-    },    
-}
+    },
+    eliminarPost(){
+        fetch(`https://node-api-doctadevs.vercel.app/posts/{{POST_ID}}`, 
+            {
+                method: 'DELETE',
+                body: {
+                    "autor": "USERNAME"
+            }
+            })
+            .then(res => {
+                return res.json()
+                })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+}   
+
 </script>
