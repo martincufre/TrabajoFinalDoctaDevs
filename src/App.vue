@@ -1,18 +1,22 @@
 <template>
   <div>
-    <post></post>
-    <lista-posts></lista-posts>
+    <home></home>
+    <registro></registro>
+    <login></login>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Post from "@/components/Post";
-import ListaPosts from "@/components/ListaPosts";
+import Home from '@/views/Home.vue'
+import Registro from '@/views/Registro.vue'
+import Login from '@/views/Login.vue'
 export default {
   name: 'App',
   components: {
-          Post,
-          ListaPosts
+        Home,
+        Registro,
+        Login
         },
 }
 </script>
