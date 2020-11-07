@@ -25,8 +25,12 @@ export default {
             fetch('https://node-api-doctadevs.vercel.app/users',
             {
                 method: 'POST',
-                header: {'Content-Type':'application/json'},
-                body: JSON.stringify(this.nombre, this.username, this.password)
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({
+                    "name": this.nombre,
+                    "username": this.username,
+                    "password": this.password
+                })
             })
                 .then(res => {
                 return res.json()
