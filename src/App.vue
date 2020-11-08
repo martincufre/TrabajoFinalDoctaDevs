@@ -3,7 +3,8 @@
     <menu-app></menu-app>
     <header-app></header-app>
     <footer-app></footer-app>
-    <router-view></router-view>
+    <router-view @load-list=" cargarLista"></router-view>
+
   </div>
 </template>
 
@@ -19,5 +20,19 @@ export default {
         FooterApp,
         MenuApp
         },
+
+  methods: {
+     cargarLista(){
+        fetch("https://node-api-doctadevs.vercel.app/posts")
+            .then(response => response.json())
+            .then(result => {
+                if(result.error) return console.log(result);
+
+                this.posts=result.body;
+                return true;
+                })
+            .catch(error => console.log('error', error));
+        }
+    },      
 }
 </script>

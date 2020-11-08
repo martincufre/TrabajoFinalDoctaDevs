@@ -18,7 +18,7 @@ export default {
         Post,
     },
     created() {
-        fetch("https://node-api-doctadevs.vercel.app/posts")
+       fetch("https://node-api-doctadevs.vercel.app/posts")
         .then(response => response.json())
         .then(result => {
             if(result.error) return console.log(result);
@@ -26,8 +26,14 @@ export default {
             this.posts=result.body;
             return true;
             })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error)); 
     },
+           
+    methods: {
+       likePost(){
+       this.$emit('load-list')
+       }
+    }, 
     data() {
         return {
             posts: [],
