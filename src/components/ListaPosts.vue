@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Post from './Post'
+import Post from '@/components/Post'
 
 export default {
-    name: "ListaPost",
+    name: "ListaPosts",
     components:{
         Post,
     },

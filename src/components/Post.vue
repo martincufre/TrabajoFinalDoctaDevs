@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import BotonEliminarPost from './BotonEliminarPost'
-import BotonLike from './BotonLike'
+import BotonEliminarPost from '@/components/BotonEliminarPost'
+import BotonLike from '@/components/BotonLike'
 
 
 export default {
