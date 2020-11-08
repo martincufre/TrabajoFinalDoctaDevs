@@ -1,22 +1,23 @@
 <template>
   <div>
-    <home></home>
-    <registro></registro>
-    <login></login>
+    <menu-app></menu-app>
+    <header-app></header-app>
+    <footer-app></footer-app>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from '@/views/Home.vue'
-import Registro from '@/views/Registro.vue'
-import Login from '@/views/Login.vue'
+import MenuApp from "@/components/MenuApp.vue"
+import HeaderApp from '@/components/HeaderApp.vue'
+import FooterApp from '@/components/FooterApp.vue'
+
 export default {
   name: 'App',
   components: {
-        Home,
-        Registro,
-        Login
+        HeaderApp,
+        FooterApp,
+        MenuApp
         },
 }
 </script>

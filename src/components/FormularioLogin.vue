@@ -3,7 +3,7 @@
         <p>Ingresar<p>
         <form>
             <input type="text" placeholder="Usuario" v-model="usuario">
-            <input type="text" placeholder="Password" v-model="password">
+            <input type="password" placeholder="Password" v-model="password">
             <button @click.prevent="ingreso">Login</button>
         </form>
     </div>

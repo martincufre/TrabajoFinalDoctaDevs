@@ -4,7 +4,7 @@
         <form action="">
             <input type="text" placeholder="Nombre" v-model="nombre">
             <input type="text" placeholder="Username" v-model="username">
-            <input type="text" placeholder="Password" v-model="password">
+            <input type="password" placeholder="Password" v-model="password">
             <button @click.prevent="registrar">Registrarse</button>
         </form>
     </div>
@@ -38,7 +38,7 @@ export default {
                 .then(data => {
                 console.log(data)
                 })
-            .catch(err => {
+                .catch(err => {
                 console.log(err)
             })
         }
