@@ -20,7 +20,12 @@ export default {
     },
     methods: {
         ingreso(){
-            fetch('https://node-api-doctadevs.vercel.app/users/{{USERNAME}}')
+            fetch('https://node-api-doctadevs.vercel.app/users/{{USERNAME}}',
+            {
+                method: 'GET',
+                headers: {'Content-Type':'application/json'},
+
+            })
             .then(res => {
                 return res.json()
             })
@@ -30,7 +35,17 @@ export default {
             .catch(err => {
                 console.log(err)
             })
+            if(sessionStorage.getItem("miembros") == null)
+            {
+                sessionStorage.setItem("miembros", this.token);
+            }
         }
+        
     },
+
+
+        
+
+
 }
 </script>
