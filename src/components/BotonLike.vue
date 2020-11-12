@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="likePost">Like</button>
+        <button @click="likePost"><i class="far fa-heart"></i></button>
     </div>
 </template>
 
@@ -14,3 +14,17 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    button{
+        border: none;
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #ee8989;
+        color: #e22727;
+    }
+</style>

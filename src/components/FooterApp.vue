@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
-        <p>Doctatweets 2020 todos los derechos reservados</p>
-        <p>Términos y Condiciones</p>
+        <p class="texto">Doctatweets 2020 todos los derechos reservados</p>
+        <p class="texto">Términos y Condiciones</p>
         
     </div>
 </template>
@@ -14,6 +14,12 @@ export default {
 
 <style>
     .footer{
-        color: gray;
+        background-color: #3399FF;
+        color: #3399FF;
+        padding: 3px;
+    }
+    .texto{
+        color: cornsilk;
+        text-align: center;
     }
 </style>

@@ -1,25 +1,29 @@
 <template>
-    <div>
-        <div>
-            <h2>{{this.autor}}</h2>
-            <p>{{this.fecha}}</p>
-            <p>{{this.mensaje}}</p>   
-            <boton-like @event-like="likePost"></boton-like>
-            <boton-eliminar-post @event-eliminar="eliminarPost"></boton-eliminar-post>
+    <div class="post">
+        <div class="titulo">
+            <h3>{{this.autor}}</h3>
+            <span>{{this.fecha}}</span>
+        </div>
+        <div class="mensaje"> 
+            <p>{{this.mensaje}}</p>
+        </div>
+        <div class="botones">          
+            <boton-like :idPostUsuario='idPost' @event-like="likePost"><span> {{ `${likes} likes`}}</span></boton-like>
+            <boton-eliminar-post :idPostUsuario='idPost' @postDelete="eliminarPost"></boton-eliminar-post>
         </div>
     </div>
 </template>
 
 <script>
-import BotonEliminarPost from '@/components/BotonEliminarPost'
-import BotonLike from '@/components/BotonLike'
 
+import BotonLike from '@/components/BotonLike'
+import BotonEliminarPost from '@/components/BotonEliminarPost'
 
 export default {
     name: 'Post',
     components: {
-        BotonEliminarPost,
         BotonLike,
+        BotonEliminarPost
     },
     data() {
         return {
@@ -30,12 +34,18 @@ export default {
         autor: String,
         fecha: String,
         mensaje: String,
-        likes: Number
+        likes: Number,
+        idPost: String
     },
     methods: {
         likePost(){
-            fetch(`https://node-api-doctadevs.vercel.app/posts/{{POST_ID}}/like`,
+            fetch(`https://node-api-doctadevs.vercel.app/posts/${this.idPost}/like`,
             {
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type':'application/json',
+                'Authorization' : `Bearer ${sessionStorage.getItem('token')}`
+                },
                 method: 'POST'
             })
             .then(res => {
@@ -44,18 +54,19 @@ export default {
             .then(data => {
                 console.log(data)
             })
-            .catch(err => {
-                console.log(err)
-            })
-        }
-    },
+            .catch(err => console.log(err));
+        },
     eliminarPost(){
-        fetch(`https://node-api-doctadevs.vercel.app/posts/{{POST_ID}}`, 
-            {
+            fetch(`https://node-api-doctadevs.vercel.app/posts/${this.idPost}`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type':'application/json',
+                'Authorization' : `Bearer ${sessionStorage.getItem('token')}`
+                },
                 method: 'DELETE',
                 body: {
-                    "autor": "USERNAME"
-            }
+                    autor: sessionStorage.getItem('username')
+                    }
             })
             .then(res => {
                 return res.json()
@@ -63,10 +74,47 @@ export default {
             .then(data => {
                 console.log(data)
             })
-            .catch(err => {
-                console.log(err)
-            })
-        }
+            .catch(err => console.log(err))
+        },
+}
 }   
 
 </script>
+
+<style>
+    .post{
+        width: 600px;
+        margin: 10px auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        min-height: 10vh;
+        border: 1px solid #cccccc;
+        border-radius: 10px;
+        text-transform: lowercase;
+        cursor: pointer;
+    }
+    .post .titulo{
+        margin: 10px;
+        flex-basis: 100%;
+        display: flex;
+        align-items: baseline;
+    }
+    .post h3{
+        margin: 10px;
+        padding-left: 10px;
+    }
+    .post .mensaje{
+        flex-basis: 100%;
+        margin: 10px 30px;
+    }
+    .post .botones{
+        display: flex;
+
+    }
+    .post .titulo h3{
+        width: 60%;
+    }
+    
+</style>

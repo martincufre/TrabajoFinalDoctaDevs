@@ -5,7 +5,7 @@
         :fecha='post.fecha'
         :mensaje='post.mensaje'
         :likes='post.likes.length'
-        ></post>
+        :idPost='post._id'></post>
     </div>
 </template>
 
@@ -27,16 +27,20 @@ export default {
             return true;
             })
         .catch(error => console.log('error', error)); 
-    },
-           
-    methods: {
-       likePost(){
-       this.$emit('load-list')
-       }
     }, 
     data() {
         return {
             posts: [],
+        }
+    },
+    watch: {
+        posts: function(){
+            fetch('https://node-api-doctadevs.vercel.app/posts')
+            .then(response => response.json())
+            .then(data => {
+                this.posts = data.body;
+            })
+            .catch(err => console.log(err))
         }
     },
     

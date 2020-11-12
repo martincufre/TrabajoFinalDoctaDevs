@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p>Registrarse</p>
+    <div class="formulario">
+        <h2>Registrarse</h2>
         <form action="">
             <input type="text" placeholder="Nombre" v-model="nombre">
             <input type="text" placeholder="Username" v-model="username">
@@ -41,7 +41,35 @@ export default {
                 .catch(err => {
                 console.log(err)
             })
+            this.nombre = '';
+            this.username = '';
+            this.password = '';
         }
     },
 }
 </script>
+
+<style>
+    .formulario{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 50vh;
+    }
+    .formulario input{
+        width: 90%;
+        height: 35px;
+        margin: 10px 0;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    .formulario button{
+    width: 30%;
+    height: 45px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    }    
+</style>

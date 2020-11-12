@@ -1,8 +1,10 @@
 <template>
     <div class="menu">
-        <router-link class="ruta" to="Login">Login</router-link>
+        <router-link class="ruta" to="/">Login</router-link>
         <router-link class="ruta" to="Registro">Registro</router-link>
-        <router-link class="ruta" to="/">Home</router-link>
+        <router-link class="ruta" to="Home">Home</router-link>
+        <router-link class="ruta" to="Feed">Feed</router-link>
+        <router-link class="ruta" to="Perfil">Perfil</router-link>
         
     </div>
 </template>
@@ -15,7 +17,16 @@ export default {
 </script>
 
 <style>
+    .menu{
+        text-align: end;
+    }
     .ruta{
-        color: gray;
+        color: #ffffff;
+        padding: 0 15px;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    .ruta:hover{
+        background-color: royalblue;
     }
 </style>
