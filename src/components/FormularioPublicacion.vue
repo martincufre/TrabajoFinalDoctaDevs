@@ -63,9 +63,10 @@ export default {
         align-items: center;
         min-height: 10vh;
         border: 1px solid black;
-        border-radius: 10px;
+        border-radius: 5px;
         flex-flow: row wrap;
         color: black;
+        cursor: pointer;
     }
     button{
         font-size: 1rem;
@@ -73,6 +74,7 @@ export default {
         border: none;
         margin: 5px 0;
         padding: 5px;
-        margin-left: 60px;
+        margin-left: 60px
+        
     }
 </style>

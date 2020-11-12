@@ -8,8 +8,8 @@
             <p>{{this.mensaje}}</p>
         </div>
         <div class="botones">          
-            <boton-like :idPostUsuario='idPost' @event-like="likePost"><span> {{ `${likes} likes`}}</span></boton-like>
             <boton-eliminar-post :idPostUsuario='idPost' @postDelete="eliminarPost"></boton-eliminar-post>
+            <boton-like :idPostUsuario='idPost' @event-like="likePost">{{this.likes.length}}</boton-like>
         </div>
     </div>
 </template>
@@ -90,8 +90,6 @@ export default {
         justify-content: center;
         align-items: center;
         min-height: 10vh;
-        border: 1px solid #cccccc;
-        border-radius: 10px;
         text-transform: lowercase;
         cursor: pointer;
     }
