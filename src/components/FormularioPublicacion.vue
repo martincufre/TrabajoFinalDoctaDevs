@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @click.prevent="publicarPost" >
+        <form @submit.prevent="publicarPost" >
             <h4>Actividad</h4>
             <textarea class="public" v-model="publicar" placeholder="¿Que está pasando?"></textarea>
             <button>Publicar</button>

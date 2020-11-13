@@ -31,11 +31,13 @@ export default {
                 this.posts = data.body;
             })
             .catch(err => console.log(err));
-        },
-        created() {
-            this.getPosts()
         }
-    }, 
+    },    
+
+    created() {
+            this.getPosts()
+    },
+     
     
     data() {
         return {

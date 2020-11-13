@@ -2,9 +2,9 @@
     <div class="menu">
         <router-link class="ruta" :to="{path:'/'}">Login</router-link>
         <router-link class="ruta" :to="{path:'/registro'}">Registro</router-link>
-        <router-link class="ruta" :to="{path:'/home'}">Home</router-link>
-        <router-link class="ruta" :to="{path:'/feed'}">Feed</router-link>
-        <router-link class="ruta" :to="{path:'/perfil'}">Perfil</router-link>
+        <router-link class="ruta" :to="{name:'Home'}">Home</router-link>
+        <router-link class="ruta" :to="{path:'Feed'}">Feed</router-link>
+        <router-link class="ruta" :to="{path:'Perfil'}">Perfil</router-link>
         
     </div>
 </template>
