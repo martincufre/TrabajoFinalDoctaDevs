@@ -22,6 +22,7 @@ export default {
     components:{
         Post,
     },
+    
     methods: {
         getPosts(){
             fetch(this.postURL)
@@ -33,15 +34,14 @@ export default {
         },
         created() {
             this.getPosts()
-        }, 
-        data() {
-            return {
-                posts: [],
-                postURL: "https://node-api-doctadevs.vercel.app/posts"
-            }
-    }
-
+        }
+    }, 
+    
+    data() {
+        return {
+            posts: [],
+            postURL: "https://node-api-doctadevs.vercel.app/posts"
+        }
     }
 }
-
 </script>

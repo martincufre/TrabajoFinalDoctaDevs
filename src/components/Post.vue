@@ -42,23 +42,23 @@ export default {
             fetch(`https://node-api-doctadevs.vercel.app/posts/${this.idPost}/like`,
             {
                 headers: {
-                'Accept': 'application/json',
-                'Content-Type':'application/json',
-                'Authorization' : `Bearer ${sessionStorage.getItem('token')}`
-                },
-                method: 'POST'
-            })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data)
-                this.$emit('like')
+                    'Accept': 'application/json',
+                    'Content-Type':'application/json',
+                    'Authorization' : `Bearer ${sessionStorage.getItem('token')}`
+                    },
+                    method: 'POST'
+                })
+                .then(res => {
+                    return res.json()
+                })
+                .then(data => {
+                    console.log(data)
+                    this.$emit('like')
         
-            })
-            .catch(err => console.log(err));
-        },
-    eliminarPost(){
+                })
+                .catch(err => console.log(err));
+            },
+        eliminarPost(){
             fetch(`https://node-api-doctadevs.vercel.app/posts/${this.idPost}`, {
             headers: {
                 'Accept': 'application/json',
