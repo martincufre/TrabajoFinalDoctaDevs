@@ -9,7 +9,7 @@
         </div>
         <div class="botones">          
             <boton-eliminar-post :idPostUsuario='idPost' @postDelete="eliminarPost"></boton-eliminar-post>
-            <boton-like :idPostUsuario='idPost' @event-like="likePost">{{this.likes.length}}</boton-like>
+            <boton-like :idPostUsuario='idPost' @event-like="likePost" @click="likePost"></boton-like>{{this.likes}}
         </div>
     </div>
 </template>
@@ -53,6 +53,8 @@ export default {
             })
             .then(data => {
                 console.log(data)
+                this.$emit('like')
+        
             })
             .catch(err => console.log(err));
         },

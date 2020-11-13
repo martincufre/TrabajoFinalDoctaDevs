@@ -36,6 +36,7 @@ export default {
             .then(result => {
                 if (result.error) return console.log(result);
                 sessionStorage.setItem("token", result.body.token);
+                sessionStorage.setItem('username', this.usuario);
                 this.username = "";
                 this.password = "";
 

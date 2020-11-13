@@ -5,7 +5,9 @@
         :fecha='post.fecha'
         :mensaje='post.mensaje'
         :likes='post.likes.length'
-        :idPost='post._id'></post>
+        :idPost='post._id'
+        :postURL="postURL"
+        @like="getPosts"></post>
     </div>
 </template>
 
@@ -14,35 +16,32 @@ import Post from '@/components/Post'
 
 export default {
     name: "ListaPosts",
+    props: {
+        URL: String
+    },
     components:{
         Post,
     },
-    created() {
-       fetch("https://node-api-doctadevs.vercel.app/posts")
-        .then(response => response.json())
-        .then(result => {
-            if(result.error) return console.log(result);
-
-            this.posts=result.body;
-            return true;
-            })
-        .catch(error => console.log('error', error)); 
-    }, 
-    data() {
-        return {
-            posts: [],
-        }
-    },
-    watch: {
-        posts: function(){
-            fetch('https://node-api-doctadevs.vercel.app/posts')
+    methods: {
+        getPosts(){
+            fetch(this.postURL)
             .then(response => response.json())
             .then(data => {
                 this.posts = data.body;
             })
-            .catch(err => console.log(err))
-        }
-    },
-    
+            .catch(err => console.log(err));
+        },
+        created() {
+            this.getPosts()
+        }, 
+        data() {
+            return {
+                posts: [],
+                postURL: "https://node-api-doctadevs.vercel.app/posts"
+            }
+    }
+
+    }
 }
+
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <formulario-publicacion></formulario-publicacion>
-        <lista-posts></lista-posts>
+        <lista-posts :URL="URL"></lista-posts>
     </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     components: {
         FormularioPublicacion,
         ListaPosts
+    },
+    data(){
+        return{
+            URL:`https://node-api-doctadevs.vercel.app/users/${this.$route.params.username}/posts`
+        }
     }
 }
 </script>
