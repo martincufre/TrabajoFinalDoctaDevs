@@ -1,10 +1,10 @@
 <template>
     <div class="menu">
-        <router-link class="ruta" to="/">Login</router-link>
-        <router-link class="ruta" to="Registro">Registro</router-link>
-        <router-link class="ruta" to="Home">Home</router-link>
-        <router-link class="ruta" to="Feed">Feed</router-link>
-        <router-link class="ruta" to="Perfil">Perfil</router-link>
+        <router-link class="ruta" :to="{path:'/'}">Login</router-link>
+        <router-link class="ruta" :to="{path:'/registro'}">Registro</router-link>
+        <router-link class="ruta" :to="{path:'/home'}">Home</router-link>
+        <router-link class="ruta" :to="{path:'/feed'}">Feed</router-link>
+        <router-link class="ruta" :to="{path:'/perfil'}">Perfil</router-link>
         
     </div>
 </template>
