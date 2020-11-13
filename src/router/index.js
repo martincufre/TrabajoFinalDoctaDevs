@@ -6,6 +6,7 @@ import Registro from '@/views/Registro.vue'
 import Login from '@/views/Login.vue'
 import Feed from '@/views/Feed.vue'
 import Perfil from '@/views/Perfil.vue'
+import PostSingle from '@/views/PostSingle.vue'
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,12 @@ const routes = [
     path: '/perfil',
     name: 'Perfil',
     component: Perfil,
+    meta: {logueado: true},
+  },
+  {
+    path: 'post/idPost',
+    name: 'post',
+    component: PostSingle,
     meta: {logueado: true},
   }
 ]
