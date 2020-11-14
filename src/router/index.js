@@ -6,7 +6,6 @@ import Registro from '@/views/Registro.vue'
 import Login from '@/views/Login.vue'
 import Feed from '@/views/Feed.vue'
 import Perfil from '@/views/Perfil.vue'
-import PostSingle from '@/views/PostSingle.vue'
 
 Vue.use(VueRouter)
 
@@ -28,7 +27,7 @@ const routes = [
     component: Registro
   },
   {
-    path: '/feed',
+    path: '/feed/:username',
     name: 'Feed',
     component: Feed,
     meta: {logueado: true},
@@ -39,12 +38,6 @@ const routes = [
     component: Perfil,
     meta: {logueado: true},
   },
-  {
-    path: 'post/idPost',
-    name: 'post',
-    component: PostSingle,
-    meta: {logueado: true},
-  }
 ]
 
 const router = new VueRouter({

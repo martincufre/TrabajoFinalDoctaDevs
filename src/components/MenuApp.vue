@@ -2,9 +2,9 @@
     <div class="menu">
         <router-link class="ruta" :to="{path:'/'}">Login</router-link>
         <router-link class="ruta" :to="{path:'/registro'}">Registro</router-link>
-        <router-link class="ruta" :to="{name:'Home'}">Home</router-link>
-        <router-link class="ruta" :to="{path:'Feed'}">Feed</router-link>
-        <router-link class="ruta" :to="{path:'Perfil'}">Perfil</router-link>
+        <router-link class="ruta" :to="{path:'/home', name:'Home'}">Home</router-link>
+        <router-link class="ruta" :to="{path: '/feed' , name: 'Feed', params: {username: `${sessionStorage.getItem('username')}`}}">Feed</router-link>
+        <router-link class="ruta" :to="{path:'/home', name:'Perfil'}">Perfil</router-link>
         
     </div>
 </template>
@@ -14,6 +14,7 @@ export default {
     name: 'MenuApp',
 
 }
+
 </script>
 
 <style>
