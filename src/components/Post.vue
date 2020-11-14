@@ -8,7 +8,7 @@
             <p>{{this.mensaje}}</p>
         </div>
         <div class="botones">          
-            <boton-eliminar-post :idPostUsuario='idPost' @postDelete="eliminarPost"></boton-eliminar-post>
+            <boton-eliminar-post :idPostUsuario='idPost' @postDelete="eliminarPost" v-if="username == autor"></boton-eliminar-post>
             <boton-like :idPostUsuario='idPost' @event-like="likePost" @click="likePost"></boton-like>{{this.likes}}
         </div>
     </div>
@@ -28,6 +28,7 @@ export default {
     data() {
         return {
             post: {},
+            username: sessionStorage.getItem('username')
         }
     },
     props: {
