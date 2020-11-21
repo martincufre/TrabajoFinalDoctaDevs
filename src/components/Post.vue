@@ -123,6 +123,19 @@ export default {
         .post{
             margin: 10px;
             margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .post .titulo{
+            font-size: 0.71rem;
+            margin-block-end:15px;
+            margin-left: 2px;
+        }
+        .post .mensaje{
+            font-size: 0.9rem;
+            
+        }
+        .post .botones{
+            font-size: 0.8em;
         }
     }
 </style>

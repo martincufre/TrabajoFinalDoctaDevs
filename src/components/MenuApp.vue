@@ -47,5 +47,9 @@ watch: {
             display: flex;
             flex-flow: column;
         }
+        .ruta{
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
     }
 </style>

@@ -26,7 +26,7 @@ export default {
 <style>
     @media screen and (max-width: 790px) {
         .feed{
-            width: 80%;
+            width: 85%;
         }
     }
     @media screen and (max-width: 330px) {

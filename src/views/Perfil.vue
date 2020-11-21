@@ -106,6 +106,9 @@ export default {
         .botonEliminar{
             margin: 5px;
         }
+        .titulos h1{
+            font-size: 10rem;
+        }
 
     }
 </style>

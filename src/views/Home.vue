@@ -21,12 +21,12 @@ export default {
 <style>
     @media screen and (max-width: 790px) {
         .home{
-            width: 100%;
+            width: 85%;
         }
     }
     @media screen and (max-width: 330px) {
         .home{
-            width: 100%;
+            width: 50%;
         }
     }
 </style>

@@ -91,8 +91,18 @@ export default {
             margin-left: 8px;
         }
         .formPublic button{
-            width: 50%;
-            height: 30px;
+            width: 40%;
+            height: 20px;
+            font-size: 0.8rem;
+            align-content:center;
+        }
+        .formPublic h4{
+            font-size: 1rem;
+            align-items: center;
+            margin-left: 110px;
+        }
+        .formPublic .public{
+            margin-left: 0px;
         }
     }
 </style>

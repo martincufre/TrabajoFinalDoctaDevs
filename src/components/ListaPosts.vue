@@ -53,7 +53,7 @@ export default {
     @media screen and (max-width: 730px) {
         .post{
             width: 80%;
-            height: 150px;
+            min-height: 150px;
             
         }
     }
