@@ -26,7 +26,7 @@ export default {
     }
     @media screen and (max-width: 330px) {
         .home{
-            width: 50%;
+            width: 100%;
         }
     }
 </style>

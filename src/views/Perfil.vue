@@ -103,5 +103,9 @@ export default {
             height: 410px;
             margin: 15px auto;
         }
+        .botonEliminar{
+            margin: 5px;
+        }
+
     }
 </style>
