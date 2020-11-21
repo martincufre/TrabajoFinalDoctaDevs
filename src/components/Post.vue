@@ -77,7 +77,7 @@ export default {
                 })
             .then(data => {
                 console.log(data)
-                this.$emit('like')
+                this.$emit('eliminar')
             })
             .catch(err => console.log(err))
         },

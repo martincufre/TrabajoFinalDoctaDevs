@@ -5,6 +5,9 @@
             <input type="text" placeholder="Usuario" v-model="usuario">
             <input type="password" placeholder="Password" v-model="password">
             <button @click.prevent="ingreso">Login</button>
+            <span>Si no estas suscripto <a href="./registro">Regístrate</a></span>
+            
+            <span><strong>{{error}}</strong></span>
         </form>
     </div>
 </template>
@@ -16,6 +19,7 @@ export default {
         return {
             usuario: '',
             password: '',
+            error: '',
         }
     },
     methods: {
@@ -34,13 +38,16 @@ export default {
                 return res.json()
             })
             .then(result => {
-                if (result.error) return console.log(result);
+                if (result.error){
+                    this.error = result.message;
+                    return
+                } 
                 sessionStorage.setItem("token", result.body.token);
                 sessionStorage.setItem('username', this.usuario);
                 this.username = "";
                 this.password = "";
 
-                this.$router.push({name: "home"}); 
+                this.$router.push({name: "Home"}); 
             })
             .catch(err => {
                 console.log(err)

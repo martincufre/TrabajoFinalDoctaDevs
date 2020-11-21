@@ -1,9 +1,9 @@
 <template>
     <div class="menu">
-        <router-link class="ruta" :to="{path:'/'}">Login</router-link>
+        <router-link class="ruta" :to="{path:'/', name: 'Login'}">Login</router-link>
         <router-link class="ruta" :to="{path:'/registro'}">Registro</router-link>
         <router-link class="ruta" :to="{path:'/home', name:'Home'}">Home</router-link>
-        <router-link class="ruta" :to="{path: '/feed' , name: 'Feed', params: {username: usuarioLogueado}}">Feed</router-link>
+        <router-link class="ruta" :to="{path: '/feed' , name: 'Feed', params: {username: username}}">Feed</router-link>
         <router-link class="ruta" :to="{path:'/home', name:'Perfil'}">Perfil</router-link>
         
     </div>
@@ -14,9 +14,14 @@ export default {
     name: 'MenuApp',
     data() {
         return{
-            usuarioLogueado: sessionStorage.getItem('username')
+            username: window.sessionStorage.getItem('username')
         }
-    }
+    },
+watch: {
+        $route() {
+            this.username = sessionStorage.getItem('username');
+        }
+    },
 
 }
 

@@ -1,11 +1,16 @@
 <template>
-    <div>
-        <h2>{{`Nombre: ${nombre}`}}</h2>
-        <div>
+    <div class="perfil">
+        <div class="titulos">
+            <h1><i class="far fa-user-circle"></i></h1>
+            <h3>{{`Nombre: ${nombre}`}}</h3>
+        </div>
+        <div class="info">
             <p>{{`Usuario: ${usuario}`}}</p>
             <p>{{`Rol: ${rol}`}}</p>
         </div>
-        <boton-eliminar-cuenta @event-eliminar="eliminarUser"></boton-eliminar-cuenta>
+        
+        <boton-eliminar-cuenta @eliminar-usuario="eliminarUser" class="botonEliminar"></boton-eliminar-cuenta>
+        
     </div>
 </template>
 
@@ -44,13 +49,11 @@ export default {
         eliminarUser(){
             fetch(`https://node-api-doctadevs.vercel.app/users/${sessionStorage.getItem('username')}`,{
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type':'application/json',
                     'Authorization' : `Bearer ${sessionStorage.getItem('token')}`
                 },
                 method: 'DELETE',
                 body: {
-                    autor: this.autor
+                    autor: sessionStorage.getItem('username')
                     }
             })
             .then(res => {
@@ -58,9 +61,40 @@ export default {
                 })
             .then(data => {
                 console.log(data)
+                sessionStorage.removeItem('token')
+                sessionStorage.removeItem('username')
+                this.$router.push({name: 'Login'})
             })
             .catch(err => console.log(err))
         },
     },
 }
 </script>
+
+<style>
+    .perfil{
+        width: 200px;
+        margin: 10px auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulos h1{
+        font-size: 12rem;
+        margin: 0;
+        color: black;
+    }
+    .info{
+        flex-basis: 90%;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .botonEliminar{
+        margin-left: 400px;
+        text-align: end;
+    }
+</style>

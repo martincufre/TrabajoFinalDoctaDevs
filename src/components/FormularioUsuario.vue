@@ -6,6 +6,8 @@
             <input type="text" placeholder="Username" v-model="username">
             <input type="password" placeholder="Password" v-model="password">
             <button @click.prevent="registrar">Registrarse</button>
+
+            <p>{{mensaje}}</p>
         </form>
     </div>
 </template>
@@ -44,6 +46,8 @@ export default {
             this.nombre = '';
             this.username = '';
             this.password = '';
+
+            this.mensaje = "Usuario registrado con éxito, para ingresar a DoctaTweets dirígete a Login";
         }
     },
 }

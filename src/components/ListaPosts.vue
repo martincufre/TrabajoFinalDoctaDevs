@@ -7,7 +7,8 @@
         :likes='post.likes.length'
         :idPost='post._id'
         :postURL="postURL"
-        @like="getPosts"></post>
+        @like="getPosts"
+        @eliminar="getPosts"></post>
     </div>
 </template>
 

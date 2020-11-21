@@ -1,6 +1,6 @@
 <template>
-    <div >
-        <button @click="eliminarUser">Eliminar cuenta</button>
+    <div class="boton">
+        <button @click="eliminarUser">Eliminar</button>
     </div>
 </template>
 
@@ -14,3 +14,7 @@ export default {
     },
 }
 </script>
+
+<style>
+
+</style>

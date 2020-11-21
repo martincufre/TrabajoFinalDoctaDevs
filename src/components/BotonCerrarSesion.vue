@@ -11,6 +11,7 @@ export default {
         cerrarSesion(){
             sessionStorage.removeItem('token')
             sessionStorage.removeItem('username')
+            this.$router.push({name: "Login"})
         }
     },
 }
