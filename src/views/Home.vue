@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
         <formulario-publicacion></formulario-publicacion>
         <lista-posts></lista-posts>
     </div>
@@ -17,3 +17,16 @@ export default {
     },
 }
 </script>
+
+<style>
+    @media screen and (max-width: 790px) {
+        .home{
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 330px) {
+        .home{
+            width: 50%;
+        }
+    }
+</style>

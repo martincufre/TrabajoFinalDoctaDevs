@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="post">
         <post v-for="(post, tweet) in posts" :key="tweet"
         :autor="post.autor.username"
         :fecha='post.fecha'
@@ -48,3 +48,13 @@ export default {
     }
 }
 </script>
+
+<style>
+    @media screen and (max-width: 730px) {
+        .post{
+            width: 80%;
+            height: 150px;
+            
+        }
+    }
+</style>

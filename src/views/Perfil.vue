@@ -97,4 +97,11 @@ export default {
         margin-left: 400px;
         text-align: end;
     }
+    @media screen and (max-width: 730px) {
+        .perfil{
+            width: 80%;
+            height: 410px;
+            margin: 15px auto;
+        }
+    }
 </style>

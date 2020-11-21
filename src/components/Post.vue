@@ -119,5 +119,10 @@ export default {
     .post .titulo h3{
         width: 60%;
     }
-    
+    @media screen and (max-width: 730px) {
+        .post{
+            margin: 10px;
+            margin-bottom: 10px;
+        }
+    }
 </style>

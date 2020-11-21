@@ -40,4 +40,12 @@ watch: {
     .ruta:hover{
         background-color: royalblue;
     }
+
+    @media screen and (max-width: 730px) {
+        .menu{
+            height: 50px;
+            display: flex;
+            flex-flow: column;
+        }
+    }
 </style>

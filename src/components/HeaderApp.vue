@@ -33,5 +33,13 @@ export default {
         justify-content: center;
         color: whitesmoke;
     }
+    @media screen and (max-width: 450px) {
+        .encabezado{
+            height: 200px;
+            flex-flow: column wrap;
+            padding: 0 30px;
+        }
+    
+    }
 
 </style>

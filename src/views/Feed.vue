@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="feed">
         <formulario-publicacion></formulario-publicacion>
         <lista-posts :URL="URL"></lista-posts>
     </div>
@@ -22,3 +22,16 @@ export default {
     }
 }
 </script>
+
+<style>
+    @media screen and (max-width: 790px) {
+        .feed{
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 330px) {
+        .feed{
+            width: 50%;
+        }
+    }
+</style>

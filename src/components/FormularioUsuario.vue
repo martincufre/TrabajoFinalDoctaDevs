@@ -75,5 +75,15 @@ export default {
     margin: 10px 0;
     border-radius: 5px;
     font-size: 1rem;
+    }
+    @media screen and (max-width: 730px) {
+        .formulario{
+            width: 80%;
+            height: 350px;
+            margin: 15px auto;
+        }
+        .formulario form{
+            margin: 0 auto;
+        }
     }    
 </style>

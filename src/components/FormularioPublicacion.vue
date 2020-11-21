@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="formPublic">
         <form @submit.prevent="publicarPost" >
             <h4>Actividad</h4>
             <textarea class="public" v-model="publicar" placeholder="¿Que está pasando?"></textarea>
@@ -50,12 +50,12 @@ export default {
 </script>
 
 <style>
-    h4{
+    .formPublic h4{
         text-align: center;
         font-size: 1.5rem;
         margin: 5px;
     }
-    .public{
+    .formPublic .public{
         width: 700px;
         margin: 20px auto;
         display: flex;
@@ -68,7 +68,7 @@ export default {
         color: black;
         cursor: pointer;
     }
-    button{
+    .formPublic button{
         font-size: 1rem;
         color: whitesmoke;
         border: none;
@@ -76,5 +76,23 @@ export default {
         padding: 5px;
         margin-left: 60px
         
+    }
+    @media screen and (max-width: 730px) {
+        .formPublic{
+            width: 80%;
+            height: 100px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        .formPublic .public{
+            width: 165%;
+            height: 50px;
+            margin-left: 8px;
+        }
+        .formPublic button{
+            width: 50%;
+            height: 30px;
+        }
     }
 </style>

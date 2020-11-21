@@ -94,5 +94,15 @@ export default {
         border: 1px solid #cccccc;
         border-radius: 5px;
         font-size: 1.5rem;
+    }
+    @media screen and (max-width: 730px) {
+        .formlogin{
+            width: 80%;
+            height: 350px;
+            margin: 15px auto;
+        }
+        .formlogin form{
+            margin: 0 auto;
+        }
     }    
 </style>

@@ -22,4 +22,11 @@ export default {
         color: cornsilk;
         text-align: center;
     }
+    @media screen and (max-width: 750px) {
+        .footer{
+            height: 100px;
+            margin-top: 100vh;
+            
+        }
+    }    
 </style>
