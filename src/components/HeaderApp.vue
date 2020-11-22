@@ -35,9 +35,9 @@ export default {
     }
     @media screen and (max-width: 470px) {
         .encabezado{
-            height: 200px;
+            height: 170px;
             flex-flow: column wrap;
-            padding: 0 30px;
+            padding: 0 5px;
         }
         .encabezado h1{
             font-size: 1.4rem;
